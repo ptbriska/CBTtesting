@@ -1,5 +1,5 @@
 {
-  "kode_ujian": "GEODATIS-SEP26",
+  "kode_ujian": "a. SEP26",
   "nama_kegiatan": "SIMULASI OSN GEOGRAFI 2026",
   "sistem_ujian": "CBT",
   "mode_ujian": "LATIHAN",
@@ -10,7 +10,7 @@
   "nama_sistem_cbt": "CBT SMAN 12 BANUA",
   "penyelenggara": "Kelas 12 MIPA 1",
   "lembaga": "SMAN 12 BANUA",
-  "alamat_lembaga": "Jl. Pendidikan No. 100, Banjarmasin",
+  "alamat_lembaga": "a. Pendidikan No. 100, Banjarmasin",
   "logo": "https://lh3.googleusercontent.com/d/1TYEl9QOZV3EU5p3peLGaaUZcjrOISSSz",
   "scoring_rules": {
     "1A": {
@@ -70,13 +70,13 @@
     {
       "No": 1,
       "Tipe": "1A",
-      "Soal": "Perhatikan opsi berikut\n(1) Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\n(2) Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\n(3) Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\n(4) Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\nIbukota dari negara Indonesia adalah...",
+      "Soal": "Perhatikan opsi berikut\na. Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\nb. Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\nc. Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\nd. Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\nIbukota dari negara Indonesia adalah...",
       "A": "Surabaya",
       "B": "Bandung",
       "C": "Jakarta",
       "D": "Medan",
       "E": "Semarang",
-      "Gambar": "",
+      "Gambar": "a. ",
       "Kunci": "C",
       "Level": "E",
       "Subtest": "TWK",
@@ -86,7 +86,7 @@
     {
       "No": 2,
       "Tipe": "2A",
-      "Soal": "Manakah dari zat berikut yang termasuk ke dalam gas rumah kaca?\n(1) $(\\iint_{5}^{5} {sinx dx})/(tanx)$\n(2) Fgvjhbbjkbhkjfncfchmjcghjmghmghm:\n(3) Perhatikan opsi berikut:\n(4) Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\n(5) Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\n(6) Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\n(7) Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\nIbukota dari negara Indonesia adalah...",
+      "Soal": "Manakah dari zat berikut yang termasuk ke dalam gas rumah kaca?\n$(\\iint_{5}^{5} {sinx dx})/(tanx)$\nFgvjhbbjkbhkjfncfchmjcghjmghmghm:\nPerhatikan opsi berikut:\na. Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\nb. Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\nc. Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxvbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\nd. Sssssggggggggggggggggbzhzsdbvjhzvbgzdjfvbjkbbzdkjfbzzkjvbmzbbbzvbzfmfvb,xzjvbxxbxdnxfnxgnxfgnxfgnxfgnxfghnxfgxfgxfgnxfgxfgxcfgncf\nIbukota dari negara Indonesia adalah...",
       "A": "Karbon dioksida",
       "B": "Oksigen",
       "C": "Metana",
@@ -106,13 +106,13 @@
     {
       "No": 3,
       "Tipe": "3A",
-      "Soal": "Berapakah hasil dari 12 x 15?\n(1) Kemudian tentukan nilai dari hasil berikut juga\n(2) a\n(3) a\n(4) a\n(5) a\nf",
+      "Soal": "Berapakah hasil dari 12 x 15?\nKemudian tentukan nilai dari hasil berikut juga\na. a\nb. a\nc. a\nd. a\ne. f",
       "A": "-",
       "B": "-",
       "C": "-",
       "D": "-",
       "E": "-",
-      "Gambar": "",
+      "Gambar": "a. ",
       "Kunci": "180",
       "Level": "E",
       "Subtest": "TIU",
@@ -128,7 +128,7 @@
       "C": "Molekulnya bersifat polar.",
       "D": "Termasuk unsur tunggal.",
       "E": "Termasuk unsur majemuk.",
-      "Gambar": "",
+      "Gambar": "a. ",
       "Kunci": [
         "B",
         "S",
@@ -150,7 +150,7 @@
       "C": "Memberitahu rekan tersebut secara pribadi dan membantunya",
       "D": "Melaporkan kejadian tersebut langsung ke atasan Anda",
       "E": "Mengabaikannya karena bukan tanggung jawab utama Anda",
-      "Gambar": "",
+      "Gambar": "a. ",
       "Kunci": {
         "A": 2,
         "B": 3,
