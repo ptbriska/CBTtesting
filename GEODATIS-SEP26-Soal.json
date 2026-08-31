@@ -70,7 +70,7 @@
     {
       "No": 1,
       "Tipe": "1A",
-      "Soal": "Perhatikan opsi berikut\na. Ssss\nb. Sss\nc. Sss\nd. sss\nIbukota dari negara Indonesia adalah...",
+      "Soal": "Perhatikan opsi berikut<br>a. Ssss<br>b. Sss<br>c. Sss<br>d. sss<br>Ibukota dari negara Indonesia adalah...",
       "A": "Surabaya",
       "B": "Bandung",
       "C": "Jakarta",
@@ -86,7 +86,7 @@
     {
       "No": 2,
       "Tipe": "2A",
-      "Soal": "Manakah dari zat berikut yang termasuk ke dalam gas rumah kaca?\n$\\iint_{5}^{5} {sinx x dx}$",
+      "Soal": "Manakah dari zat berikut yang termasuk ke dalam gas rumah kaca?<br>$\\iint_{5}^{5} {sinx x dx}$",
       "A": "Karbon dioksida",
       "B": "Oksigen",
       "C": "Metana",
@@ -106,7 +106,7 @@
     {
       "No": 3,
       "Tipe": "3A",
-      "Soal": "Berapakah hasil dari 12 x 15?\na. Kemudian tentukan nilai dari hasil berikut juga\nb. a\nc. a\nd. a\ne. a\nf",
+      "Soal": "Berapakah hasil dari 12 x 15?<br>a. Kemudian tentukan nilai dari hasil berikut juga<br>b. a<br>c. a<br>d. a<br>e. a<br>f",
       "A": "-",
       "B": "-",
       "C": "-",
