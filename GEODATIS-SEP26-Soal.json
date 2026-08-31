@@ -86,7 +86,7 @@
     {
       "No": 2,
       "Tipe": "2A",
-      "Soal": "Manakah dari zat berikut yang termasuk ke dalam gas rumah kaca?",
+      "Soal": "Manakah dari zat berikut yang termasuk ke dalam gas rumah kaca?\n $\\iint_{5}^{5} {sinx x dx}$",
       "A": "Karbon dioksida",
       "B": "Oksigen",
       "C": "Metana",
@@ -122,7 +122,7 @@
     {
       "No": 4,
       "Tipe": "4A",
-      "Soal": "Tentukan status kebenaran pernyataan mengenai air (H2O):",
+      "Soal": "Tentukan status kebenaran pernyataan mengenai air (H2O):D",
       "A": "Memiliki rumus kimia H2O.",
       "B": "Membeku pada suhu 100°C.",
       "C": "Molekulnya bersifat polar.",
