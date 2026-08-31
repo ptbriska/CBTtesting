@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBT Visual & LaTeX Tester</title>
+  
+  <!-- MathJax Config & CDN -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+    
+    .page { display: none; padding: 20px; width: 100%; max-width: 1000px; margin: 0 auto; }
+    .page.active { display: block; }
+    
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    .btn { background: var(--primary); color: #fff; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 14px; }
+    .btn:hover { background: var(--primary-hover); }
+    .btn-secondary { background: #64748b; }
+    .btn-secondary:hover { background: #475569; }
+    .btn-success { background: #16a34a; }
+    .btn-success:hover { background: #15803d; }
+    
+    /* CBT Layout */
+    .cbt-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 2px solid var(--border); margin-bottom: 20px; }
+    .timer { background: #fef3c7; color: #b45309; padding: 6px 12px; border-radius: 20px; font-weight: bold; }
+    .cbt-grid { display: grid; grid-template-columns: 1fr 260px; gap: 20px; }
+    
+    .option-item { display: flex; align-items: center; gap: 12px; border: 1px solid var(--border); padding: 12px; border-radius: 6px; margin-bottom: 8px; cursor: pointer; }
+    .option-item:hover { background: #f1f5f9; }
+    
+    .nav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+    .nav-num { border: 1px solid var(--border); padding: 8px; text-align: center; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    .nav-num.active { background: var(--primary); color: #fff; }
+    
+    .latex-tester { margin-top: 25px; border-top: 2px dashed #cbd5e1; padding-top: 15px; }
+    textarea { width: 100%; height: 70px; padding: 8px; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 8px; font-family: monospace; }
+    input[type="text"] { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 15px; }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: START PAGE -->
+  <div id="page1" class="page active">
+    <div class="card" style="text-align: center; margin-top: 80px;">
+      <h2 id="exam-title">Memuat data ujian...</h2>
+      <p id="exam-sub" style="margin: 15px 0; color: #64748b;">Pengujian tata letak UI dan validasi rendering kode LaTeX.</p>
+      <button class="btn" id="start-btn" onclick="startExam()" disabled>Mulai Ujian</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2: CBT CORE -->
+  <div id="page2" class="page">
+    <div class="cbt-header card" style="margin-bottom: 10px;">
+      <div><strong id="exam-name-header">CBT Test</strong></div>
+      <div class="timer" id="timer-display">Sisa Waktu: --:--</div>
+    </div>
+
+    <div class="cbt-grid">
+      <!-- Area Soal -->
+      <div class="card">
+        <h3 id="question-number">Soal No. -</h3>
+        <hr style="margin: 10px 0; border: none; border-top: 1px solid var(--border);">
+        
+        <div id="question-text" style="font-size: 16px; margin-bottom: 20px;"></div>
+        <div id="options-container"></div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+          <button class="btn btn-secondary" onclick="prevQuestion()">Sebelumnya</button>
+          <button class="btn" onclick="nextQuestion()">Berikutnya</button>
+        </div>
+
+        <!-- Tool Pengujian Raw LaTeX Guru -->
+        <div class="latex-tester">
+          <strong>Live Tester LaTeX Guru:</strong>
+          <textarea id="latexInput" placeholder="Paste kode LaTeX di sini untuk uji coba instant..."></textarea>
+          <button class="btn btn-secondary" onclick="testLatex()">Render LaTeX Test</button>
+          <div id="latexPreview" style="margin-top: 10px; padding: 10px; background: #f1f5f9; border-radius: 4px;"></div>
+        </div>
+      </div>
+
+      <!-- Navigasi Soal -->
+      <div class="card">
+        <h4 style="margin-bottom: 10px;">Navigasi Soal</h4>
+        <div class="nav-grid" id="nav-grid"></div>
+        <button class="btn btn-success" style="width: 100%; margin-top: 25px;" onclick="switchPage(3)">Selesai & Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: FINISH PAGE -->
+  <div id="page3" class="page">
+    <div class="card" style="text-align: center; margin-top: 80px;">
+      <h2 style="color: #16a34a;">Ujian Berhasil Diselesaikan!</h2>
+      <p style="margin: 15px 0; color: #64748b;">Jawaban Anda telah tersimpan di sistem.</p>
+      <button class="btn btn-secondary" onclick="switchPage(1)">Kembali ke Halaman Awal</button>
+    </div>
+  </div>
+
+  <script>
+    let examData = null;
+    let currentIndex = 0;
+
+    // Load JSON saat halaman pertama dibuka
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('./GEODATIS-SEP26-Soal.json')
+        .then(response => {
+          if (!response.ok) throw new Error("Gagal mengambil file JSON");
+          return response.json();
+        })
+        .then(data => {
+          examData = data;
+          document.getElementById('exam-title').innerText = data.nama_kegiatan || "Simulasi Ujian CBT";
+          document.getElementById('exam-sub').innerText = `${data.lembaga} | Durasi: ${data.timer_menit} Menit`;
+          document.getElementById('exam-name-header').innerText = data.nama_kegiatan;
+          document.getElementById('timer-display').innerText = `Sisa Waktu: ${data.timer_menit}:00`;
+          document.getElementById('start-btn').disabled = false;
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById('exam-title').innerText = "Error Memuat Soal";
+          document.getElementById('exam-sub').innerText = "Pastikan file GEODATIS-SEP26-Soal.json berada di folder yang sama.";
+        });
+    });
+
+    function startExam() {
+      if (!examData) return;
+      buildNavGrid();
+      renderQuestion(0);
+      switchPage(2);
+    }
+
+    function switchPage(pageNum) {
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      document.getElementById('page' + pageNum).classList.add('active');
+    }
+
+    function buildNavGrid() {
+      const grid = document.getElementById('nav-grid');
+      grid.innerHTML = '';
+      examData.questions.forEach((q, idx) => {
+        const btn = document.createElement('div');
+        btn.className = 'nav-num' + (idx === 0 ? ' active' : '');
+        btn.innerText = q.No;
+        btn.onclick = () => renderQuestion(idx);
+        grid.appendChild(btn);
+      });
+    }
+
+    function renderQuestion(index) {
+      if (index < 0 || index >= examData.questions.length) return;
+      currentIndex = index;
+      const q = examData.questions[index];
+
+      // Update Header Soal
+      document.getElementById('question-number').innerText = `Soal No. ${q.No} (${q.Subtest} - ${q.Tipe})`;
+      document.getElementById('question-text').innerHTML = q.Soal;
+
+      // Render Pilihan/Input Jawaban berdasarkan Tipe Soal
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+
+      if (['1A', '1B', '1C', '5A'].includes(q.Tipe)) {
+        // Single Choice / Likert
+        ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
+          if (q[opt] && q[opt] !== '-') {
+            container.innerHTML += `
+              <label class="option-item">
+                <input type="radio" name="opt_q" value="${opt}"> <strong>${opt}.</strong> &nbsp;${q[opt]}
+              </label>`;
+          }
+        });
+      } else if (q.Tipe === '2A') {
+        // Multiple Response
+        ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
+          if (q[opt] && q[opt] !== '-') {
+            container.innerHTML += `
+              <label class="option-item">
+                <input type="checkbox" name="opt_q" value="${opt}"> <strong>${opt}.</strong> &nbsp;${q[opt]}
+              </label>`;
+          }
+        });
+      } else if (['3A', '3B'].includes(q.Tipe)) {
+        // Short Answer
+        container.innerHTML = `<input type="text" placeholder="Ketik jawaban Anda di sini...">`;
+      } else if (q.Tipe === '4A') {
+        // Checklist True/False per statement
+        let html = '<table style="width:100%; border-collapse:collapse;">';
+        ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
+          if (q[opt]) {
+            html += `
+              <tr style="border-bottom:1px solid #e2e8f0; height:45px;">
+                <td>${q[opt]}</td>
+                <td style="width:80px; text-align:center;"><label><input type="radio" name="tf_${opt}" value="B"> Benar</label></td>
+                <td style="width:80px; text-align:center;"><label><input type="radio" name="tf_${opt}" value="S"> Salah</label></td>
+              </tr>`;
+          }
+        });
+        html += '</table>';
+        container.innerHTML = html;
+      }
+
+      // Update Nav Class
+      document.querySelectorAll('.nav-num').forEach((btn, idx) => {
+        btn.classList.toggle('active', idx === index);
+      });
+
+      // Render Ulang MathJax untuk Soal & Opsi yang baru di-load
+      if (window.MathJax) {
+        MathJax.typesetPromise();
+      }
+    }
+
+    function prevQuestion() { renderQuestion(currentIndex - 1); }
+    function nextQuestion() { renderQuestion(currentIndex + 1); }
+
+    function testLatex() {
+      const input = document.getElementById('latexInput').value;
+      const preview = document.getElementById('latexPreview');
+      preview.innerHTML = input;
+      if (window.MathJax) {
+        MathJax.typesetPromise([preview]);
+      }
+    }
+  </script>
+</body>
+</html>
