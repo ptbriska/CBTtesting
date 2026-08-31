@@ -6,12 +6,12 @@
   "token": "TESTING001",
   "token_pembahasan": "BAHAS2026",
   "timer_menit": 120,
-  "kalimat_motivasi": "Keberhasilan bukanlah kebetulan, melainkan hasil dari kerja keras dan ketekunan. Tetap semangat meraih impianmu!",
+  "kalimat_motivasi": "Keberhasilan bukanlah kebetulan, melainkan hasil dari kerja keras.",
   "nama_sistem_cbt": "CBT SMAN 12 BANUA",
   "penyelenggara": "Kelas 12 MIPA 1",
   "lembaga": "SMAN 12 BANUA",
   "alamat_lembaga": "Jl. Pendidikan No. 100, Banjarmasin",
-  "logo": "https://domain.com/logo.png",
+  "logo": "https://lh3.googleusercontent.com/d/1TYEl9QOZV3EU5p3peLGaaUZcjrOISSSz",
   "scoring_rules": {
     "1A": {
       "deskripsi": "Single Choice - Standar",
@@ -70,7 +70,7 @@
     {
       "No": 1,
       "Tipe": "1A",
-      "Soal": "Ibukota dari negara Indonesia adalah...",
+      "Soal": "Perhatikan opsi berikut\nSsss\nSss\nSss\nsss\nIbukota dari negara Indonesia adalah...",
       "A": "Surabaya",
       "B": "Bandung",
       "C": "Jakarta",
@@ -80,43 +80,11 @@
       "Kunci": "C",
       "Level": "E",
       "Subtest": "TWK",
-      "Section": "Penalaran",
-      "Pembahasan": "Jakarta adalah ibu kota negara Republik Indonesia secara de facto dan de jure saat ini."
+      "Section": "Penalaran Kebangsaan",
+      "Pembahasan": "Jakarta adalah ibu kota negara Republik Indonesia saat ini."
     },
     {
       "No": 2,
-      "Tipe": "1B",
-      "Soal": "Consider the following mechanisms of heat transfer...",
-      "A": "1 and 2 only",
-      "B": "1, 3, and 4 only",
-      "C": "2, 3, and 4 only",
-      "D": "1 and 4 only",
-      "E": "2 and 3 only",
-      "Gambar": "",
-      "Kunci": "B",
-      "Level": "M",
-      "Subtest": "TPA",
-      "Section": "Bahasa Inggris",
-      "Pembahasan": "Based on the context, mechanisms 1, 3, and 4 correctly describe the process."
-    },
-    {
-      "No": 3,
-      "Tipe": "1C",
-      "Soal": "Struktur sel yang berfungsi sebagai tempat terjadinya respirasi seluler adalah...",
-      "A": "Ribosom",
-      "B": "Lisosom",
-      "C": "Mitokondria",
-      "D": "Badan Golgi",
-      "E": "Retikulum Endoplasma",
-      "Gambar": "",
-      "Kunci": "C",
-      "Level": "H",
-      "Subtest": "Biologi",
-      "Section": "Sains",
-      "Pembahasan": "Mitokondria adalah organel tempat dihasilkannya ATP melalui proses respirasi sel."
-    },
-    {
-      "No": 4,
       "Tipe": "2A",
       "Soal": "Manakah dari zat berikut yang termasuk ke dalam gas rumah kaca?",
       "A": "Karbon dioksida",
@@ -124,7 +92,7 @@
       "C": "Metana",
       "D": "Nitrogen",
       "E": "Uap air",
-      "Gambar": "",
+      "Gambar": "https://wallpaperaccess.com/full/14489801.png",
       "Kunci": [
         "A",
         "C",
@@ -133,12 +101,12 @@
       "Level": "M",
       "Subtest": "Sains",
       "Section": "Kimia Lingkungan",
-      "Pembahasan": "Gas rumah kaca meliputi CO2, CH4, dan H2O. Oksigen dan Nitrogen bukan gas rumah kaca utama."
+      "Pembahasan": "Gas rumah kaca meliputi CO2, CH4, dan H2O."
     },
     {
-      "No": 5,
+      "No": 3,
       "Tipe": "3A",
-      "Soal": "Berapakah hasil dari 12 x 15?",
+      "Soal": "Berapakah hasil dari 12 x 15? \nKemudian tentukan nilai dari hasil berikut juga\na\na\na\na\nf",
       "A": "-",
       "B": "-",
       "C": "-",
@@ -148,29 +116,13 @@
       "Kunci": "180",
       "Level": "E",
       "Subtest": "TIU",
-      "Section": "Kuantitatif",
+      "Section": "Penalaran Kuantitatif",
       "Pembahasan": "Perkalian langsung: 12 x 15 = 180."
     },
     {
-      "No": 6,
-      "Tipe": "3B",
-      "Soal": "Organel sel yang dikenal sebagai penyedia energi selular adalah...",
-      "A": "-",
-      "B": "-",
-      "C": "-",
-      "D": "-",
-      "E": "-",
-      "Gambar": "",
-      "Kunci": "Mitochondria",
-      "Level": "E",
-      "Subtest": "Biologi",
-      "Section": "Sains",
-      "Pembahasan": "Mitokondria (Mitochondria) menghasilkan energi dalam bentuk ATP."
-    },
-    {
-      "No": 7,
+      "No": 4,
       "Tipe": "4A",
-      "Soal": "Tentukan status kebenaran pernyataan berikut mengenai sifat fisik air (H2O):",
+      "Soal": "Tentukan status kebenaran pernyataan mengenai air (H2O):",
       "A": "Memiliki rumus kimia H2O.",
       "B": "Membeku pada suhu 100°C.",
       "C": "Molekulnya bersifat polar.",
@@ -187,17 +139,17 @@
       "Level": "M",
       "Subtest": "Sains",
       "Section": "Kimia Dasar",
-      "Pembahasan": "1: Benar, 2: Salah (membeku 0°C), 3: Benar, 4: Salah (air adalah senyawa), 5: Benar."
+      "Pembahasan": "1: Benar, 2: Salah (0°C), 3: Benar, 4: Salah, 5: Benar."
     },
     {
-      "No": 8,
+      "No": 5,
       "Tipe": "5A",
-      "Soal": "Anda mendapati rekan kerja membuat kesalahan input data yang berdampak pada laporan tim...",
+      "Soal": "Anda mendapati rekan kerja membuat kesalahan input data...",
       "A": "Menegurnya secara langsung di depan seluruh tim",
       "B": "Mengoreksi data tersebut sendiri tanpa memberitahunya",
-      "C": "Memberitahu rekan tersebut secara pribadi dan membantunya mengoreksi",
-      "D": "Melaporkan kejadian tersebut langsung ke atasan",
-      "E": "Mengabaikannya karena itu bukan tanggung jawab utama Anda",
+      "C": "Memberitahu rekan tersebut secara pribadi dan membantunya",
+      "D": "Melaporkan kejadian tersebut langsung ke atasan Anda",
+      "E": "Mengabaikannya karena bukan tanggung jawab utama Anda",
       "Gambar": "",
       "Kunci": {
         "A": 2,
@@ -209,7 +161,7 @@
       "Level": "M",
       "Subtest": "TKP",
       "Section": "Jejaring Kerja",
-      "Pembahasan": "Opsi C menunjukkan sikap profesional, komunikasi empati, dan penyelesaian masalah kolaboratif terbaik (Skor 5)."
+      "Pembahasan": "Opsi C menunjukkan komunikasi empati terbaik (Skor 5)."
     }
   ]
 }
