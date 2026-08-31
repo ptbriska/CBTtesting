@@ -55,7 +55,7 @@
     .timer { background: #fef3c7; color: #b45309; padding: 6px 12px; border-radius: 20px; font-weight: bold; }
     .cbt-grid { display: grid; grid-template-columns: 1fr 260px; gap: 20px; }
     
-    .option-item { display: flex; align-items: center; gap: 12px; border: 1px solid var(--border); padding: 12px; border-radius: 6px; margin-bottom: 8px; cursor: pointer; }
+    .option-item { display: flex; align-items: flex-start; gap: 12px; border: 1px solid var(--border); padding: 12px; border-radius: 6px; margin-bottom: 8px; cursor: pointer; }
     .option-item:hover { background: #f1f5f9; }
     
     .nav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
@@ -65,6 +65,21 @@
     
     input[type="text"] { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 15px; }
     
+    /* Multiline & Format Text Fix */
+    .formatted-text {
+      white-space: pre-line;
+      word-break: break-word;
+      line-height: 1.6;
+    }
+    
+    .question-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 15px 0;
+      border: 1px solid var(--border);
+    }
+
     /* Report Table */
     .report-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; text-align: center; }
     .report-card { background: #f1f5f9; padding: 15px; border-radius: 8px; }
@@ -102,8 +117,12 @@
         <h3 id="question-number">Soal No. -</h3>
         <hr style="margin: 10px 0; border: none; border-top: 1px solid var(--border);">
         
-        <div id="question-text" style="font-size: 16px; margin-bottom: 20px;"></div>
-        <div id="options-container"></div>
+        <!-- Soal & Gambar -->
+        <div id="question-text" class="formatted-text" style="font-size: 16px; margin-bottom: 15px;"></div>
+        <div id="question-image-container"></div>
+        
+        <!-- Pilihan/Input Jawaban -->
+        <div id="options-container" style="margin-top: 15px;"></div>
 
         <div style="display: flex; justify-content: space-between; margin-top: 20px;">
           <button class="btn btn-secondary" onclick="prevQuestion()">Sebelumnya</button>
@@ -159,6 +178,13 @@
     let currentIndex = 0;
     let userAnswers = {};
 
+    // Helper untuk me-render MathJax secara teratur
+    function renderMath() {
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise().catch(err => console.log('MathJax error:', err));
+      }
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       fetch('./GEODATIS-SEP26-Soal.json')
         .then(res => res.json())
@@ -211,6 +237,7 @@
         if (idx === currentIndex) btn.classList.add('active');
         else if (hasAnswer) btn.classList.add('answered');
       });
+    updateNavStatus
     }
 
     function renderQuestion(index) {
@@ -219,7 +246,7 @@
       const q = examData.questions[index];
       const rule = examData.scoring_rules[q.Tipe] || {};
 
-      // 1. Fitur Metadata Badges
+      // 1. Metadata Badges
       const badgeContainer = document.getElementById('question-badges');
       badgeContainer.innerHTML = `
         <span class="badge badge-section">Section: ${q.Section || '-'}</span>
@@ -230,7 +257,17 @@
 
       // 2. Header & Soal
       document.getElementById('question-number').innerText = `Soal No. ${q.No}`;
-      document.getElementById('question-text').innerHTML = q.Soal;
+      
+      // Menggunakan innerText agar \n dibaca sebagai pemisah baris oleh CSS white-space: pre-line
+      document.getElementById('question-text').innerText = q.Soal;
+
+      // Render Gambar Soal (Jika Ada)
+      const imgContainer = document.getElementById('question-image-container');
+      if (q.Gambar && q.Gambar.trim() !== "") {
+        imgContainer.innerHTML = `<img src="${q.Gambar}" alt="Gambar Soal" class="question-image">`;
+      } else {
+        imgContainer.innerHTML = '';
+      }
 
       // 3. Render Pilihan Input
       const container = document.getElementById('options-container');
@@ -241,11 +278,13 @@
         ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
           if (q[opt] && q[opt] !== '-') {
             const checked = savedAns === opt ? 'checked' : '';
-            container.innerHTML += `
-              <label class="option-item">
-                <input type="radio" name="opt_${q.No}" value="${opt}" ${checked} onchange="saveAnswer(${q.No}, '${opt}')">
-                <strong>${opt}.</strong> &nbsp;${q[opt]}
-              </label>`;
+            const optionLabel = document.createElement('label');
+            optionLabel.className = 'option-item';
+            optionLabel.innerHTML = `
+              <input type="radio" name="opt_${q.No}" value="${opt}" ${checked} onchange="saveAnswer(${q.No}, '${opt}')">
+              <div><strong>${opt}.</strong> <span class="formatted-text">${q[opt]}</span></div>
+            `;
+            container.appendChild(optionLabel);
           }
         });
       } else if (q.Tipe === '2A') {
@@ -253,11 +292,13 @@
         ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
           if (q[opt] && q[opt] !== '-') {
             const checked = selectedArr.includes(opt) ? 'checked' : '';
-            container.innerHTML += `
-              <label class="option-item">
-                <input type="checkbox" name="opt_${q.No}" value="${opt}" ${checked} onchange="saveMultiAnswer(${q.No})">
-                <strong>${opt}.</strong> &nbsp;${q[opt]}
-              </label>`;
+            const optionLabel = document.createElement('label');
+            optionLabel.className = 'option-item';
+            optionLabel.innerHTML = `
+              <input type="checkbox" name="opt_${q.No}" value="${opt}" ${checked} onchange="saveMultiAnswer(${q.No})">
+              <div><strong>${opt}.</strong> <span class="formatted-text">${q[opt]}</span></div>
+            `;
+            container.appendChild(optionLabel);
           }
         });
       } else if (['3A', '3B'].includes(q.Tipe)) {
@@ -272,7 +313,7 @@
             const sChecked = tfObj[opt] === 'S' ? 'checked' : '';
             html += `
               <tr style="border-bottom:1px solid #e2e8f0; height:45px;">
-                <td>${q[opt]}</td>
+                <td class="formatted-text">${q[opt]}</td>
                 <td style="width:90px; text-align:center;">
                   <label><input type="radio" name="tf_${q.No}_${opt}" value="B" ${bChecked} onchange="saveTFAnswer(${q.No}, '${opt}', 'B')"> Benar</label>
                 </td>
@@ -287,7 +328,9 @@
       }
 
       updateNavStatus();
-      if (window.MathJax) MathJax.typesetPromise();
+      
+      // Memicu MathJax setelah elemen HTML sepenuhnya dirender
+      setTimeout(renderMath, 50);
     }
 
     // Handlers Penyimpanan Jawaban
@@ -400,7 +443,7 @@
       document.getElementById('report-table-body').innerHTML = tableRows;
 
       switchPage(3);
-      if (window.MathJax) MathJax.typesetPromise();
+      setTimeout(renderMath, 50);
     }
   </script>
 </body>
