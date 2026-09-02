@@ -102,7 +102,7 @@
       "Level": "H",
       "Subtest": "Matematika",
       "Section": "Kalkulus",
-      "Pembahasan": "$f'(x) = 3x^2 - 6x - 9 = 3(x + 1)(x - 3)$. Pembuat nol $x = -1$ dan $x = 3$. Uji turu:<br>1. Naik pada $x < -1$ atau $x > 3$ (Pernyataan 1 Benar / A).<br>2. Turun pada $-1 < x < 3$ (Pernyataan 4 Benar / D).<br>3. Titik belok saat $f''(x) = 6x - 6 = 0 \\Rightarrow x = 1, f(1) = -6 \\Rightarrow (1, -6)$ (Pernyataan 3 Benar / C).<br>4. Min lokal $f(3) = -22$ (Pernyataan 5 Benar / E)."
+      "Pembahasan": "$f'(x) = 3x^2 - 6x - 9 = 3(x + 1)(x - 3)$. Pembuat nol $x = -1$ dan $x = 3$. Uji turu:\n1. Naik pada $x < -1$ atau $x > 3$ (Pernyataan 1 Benar / A).\n2. Turun pada $-1 < x < 3$ (Pernyataan 4 Benar / D).\n3. Titik belok saat $f''(x) = 6x - 6 = 0 \\Rightarrow x = 1, f(1) = -6 \\Rightarrow (1, -6)$ (Pernyataan 3 Benar / C).\n4. Min lokal $f(3) = -22$ (Pernyataan 5 Benar / E)."
     },
     {
       "No": 3,
@@ -123,7 +123,7 @@
     {
       "No": 4,
       "Tipe": "4A",
-      "Soal": "Tentukan kebenaran (B/S) untuk setiap pernyataan trigonometri berikut berturut-turut:<br>1. $\\sin^2(x) + \\cos^2(x) = 1$<br>2. $\\tan(45^\\circ) = 0$<br>3. $\\sin(90^\\circ - x) = \\cos(x)$<br>4. $\\cos(60^\\circ) = \\frac{1}{2}$<br>5. $\\sin(30^\\circ) = \\frac{\\sqrt{3}}{2}$",
+      "Soal": "Tentukan kebenaran (B/S) untuk setiap pernyataan trigonometri berikut berturut-turut:\n1. $\\sin^2(x) + \\cos^2(x) = 1$\n2. $\\tan(45^\\circ) = 0$\n3. $\\sin(90^\\circ - x) = \\cos(x)$\n4. $\\cos(60^\\circ) = \\frac{1}{2}$\n5. $\\sin(30^\\circ) = \\frac{\\sqrt{3}}{2}$",
       "A": "$\\sin^2(x) + \\cos^2(x) = 1$",
       "B": "$\\tan(45^\\circ) = 0$",
       "C": "$\\sin(90^\\circ - x) = \\cos(x)$",
@@ -140,7 +140,7 @@
       "Level": "H",
       "Subtest": "Matematika",
       "Section": "Trigonometri",
-      "Pembahasan": "1. Identitas utama: Benar (B).<br>2. $\\tan(45^\\circ) = 1$: Salah (S).<br>3. Sudut relasi: Benar (B).<br>4. $\\cos(60^\\circ) = \\frac{1}{2}$: Benar (B).<br>5. $\\sin(30^\\circ) = \\frac{1}{2}$: Salah (S).<br>Hasil: B, S, B, B, S."
+      "Pembahasan": "1. Identitas utama: Benar (B).\n2. $\\tan(45^\\circ) = 1$: Salah (S).\n3. Sudut relasi: Benar (B).\n4. $\\cos(60^\\circ) = \\frac{1}{2}$: Benar (B).\n5. $\\sin(30^\\circ) = \\frac{1}{2}$: Salah (S). Hasil: B, S, B, B, S."
     }
   ]
 }
